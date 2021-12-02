@@ -50,19 +50,6 @@ public class Graph {
 		
 		u.removeEdge(v);
 		v.removeEdge(u);
-		/*
-		for(Vertex vertex : this.vertices) {
-			if(vertex.equals(v)) {
-				vertex.adjacencyList.remove(u);
-				vertex.degree--;
-			}
-				
-			else if(vertex.equals(u)) {
-				vertex.adjacencyList.remove(v);
-				vertex.degree--;
-			}
-		}
-		 */
 		
 	}
 	
@@ -71,11 +58,12 @@ public class Graph {
 	
 	
 	//Heuristic greedy algorithm for the minimum graph coloring problem
-		//Time complexity: O(n^2)
+		//Time complexity: O(n^3)
 		//Return: The chromatic number
 	
-	public int WelshPowell() {
-		int chromaticNumber = 0;
+	
+	public int RLF() {
+		int chromaticNumber = 1;
 		
 		//ArrayList sorted in decreasing order according to each vertex degree
 		this.vertices.sort(null);
@@ -138,6 +126,7 @@ public class Graph {
 	}
 	
 	public void printVertexColor() {
+		System.out.println();
 		for(Vertex v : this.vertices)
 			System.out.println("Vertex: " + v.value + "\t Color: " + v.color);
 	}
