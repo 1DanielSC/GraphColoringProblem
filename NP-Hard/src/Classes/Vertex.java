@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class Vertex implements Comparable<Vertex>{
 	
 	public int value;
-	
 	public int degree;
 	public int color;
 	
@@ -21,8 +20,11 @@ public class Vertex implements Comparable<Vertex>{
 	}
 	
 	public void addEdge(Vertex v) {
+
+		if(this.adjacencyList.contains(v)) 
+			return;
 		
-		if(this.adjacencyList.contains(v))
+		if(this.equals(v))
 			return;
 		
 		this.adjacencyList.addLast(v);
@@ -44,7 +46,7 @@ public class Vertex implements Comparable<Vertex>{
 	public boolean isAdjacentTo (Vertex v) {
 		
 		for(Vertex vertex : this.adjacencyList) {
-			if(vertex.value == v.value)
+			if(vertex.equals(v))
 				return true;
 		}
 		return false;
@@ -61,7 +63,7 @@ public class Vertex implements Comparable<Vertex>{
 	
 	//It will make possible sort an array of vertices with respect to their degree
 	public int compareTo(Vertex other) {
-		return this.degree - other.degree;
+		return other.degree - this.degree;
 	}
 
 	@Override
