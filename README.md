@@ -45,9 +45,9 @@ Being on NP-Hard directory, you should execute the following code on the command
 
 Access the directory _src_ through the command line and then type _java Classes.Application_ and execute it.
 
-### 4.1 Instance File
+### 4.1 Instance File selection
 
-As soon as you run the program, you'll be asked to type the name of a instance file to compute its chromatic number.
+As soon as you run the program, you'll be asked to type the name of aa instance file to compute its chromatic number.
 
 You should write the file name along with ".txt" at the end.
 
