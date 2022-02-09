@@ -19,6 +19,13 @@ public class Vertex implements Comparable<Vertex>{
 		this.adjacencyList = new LinkedList<Vertex>();
 	}
 	
+	public Vertex(Vertex v) {
+		this.value = v.value;
+		this.degree = v.degree;
+		this.color = v.color;
+		this.adjacencyList = v.adjacencyList;
+	}
+	
 	public void addEdge(Vertex v) {
 
 		if(this.adjacencyList.contains(v)) 
